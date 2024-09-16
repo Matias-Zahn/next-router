@@ -24,13 +24,17 @@ function Pokemons() {
       </h3>
 
       {loading ? (
-        <h3>Cargando ... </h3>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+          <h3 className="w-[300px] h-[300px] border-t-2 rounded-full animate-spin"></h3>
+        </div>
       ) : (
-        <section className="grid justify-center mt-10 grid-cols-[repeat(auto-fit,300px)] gap-4 text-black">
-          {Pokemons.map((pokemon) => (
-            <PokemonCard key={pokemon.url} pokemonUrl={pokemon.url} />
-          ))}
-        </section>
+        <div className="max-w-7xl mx-auto">
+          <section className="grid justify-center mt-10 grid-cols-[repeat(auto-fit,300px)] gap-4 text-black">
+            {Pokemons.map((pokemon) => (
+              <PokemonCard key={pokemon.url} pokemonUrl={pokemon.url} />
+            ))}
+          </section>
+        </div>
       )}
     </main>
   );
